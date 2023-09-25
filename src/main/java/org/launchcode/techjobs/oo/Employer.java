@@ -8,15 +8,18 @@ public class Employer {
     private static int nextId = 1;
     private String value;
 
+    //employer object constructor, adds id to new employer objects
     public Employer() {
         id = nextId;
         nextId++;
     }
 
     public Employer(String value) {
+        //this. calls first constructor; makes initializing id a default behavior when instantiating Employe obj
         this();
         this.value = value;
     }
+
 
     // Custom toString, equals, and hashCode methods:
 
