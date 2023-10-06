@@ -22,8 +22,8 @@ public class Job {
         nextId++;
     }
 
-    public Job(int id, String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        this.id = id;
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -53,6 +53,8 @@ public class Job {
     public int getId() {
         return id;
     }
+//public int getNextId() {return id;}
+
 
     public String getName() {
         return name;
