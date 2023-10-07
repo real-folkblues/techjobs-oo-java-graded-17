@@ -42,5 +42,21 @@ public class JobTest {
 
         assertNotEquals(job1, job2);
     }
+@Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String output = job.toString();
+        assertEquals(System.lineSeparator(), output.substring(0,1));
+        assertEquals(System.lineSeparator(), output.substring(output.length() - 1));
+
+}
+//@Test
+//    public void testToReturnStringWithBlankBeforeAfter(){
+//        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//        String output = job.toString();
+//        if(output.length() - 1)
+//            System.out.println("Data not available");
+//}
+
 
 }
