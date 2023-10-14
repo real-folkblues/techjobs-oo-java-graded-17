@@ -42,13 +42,36 @@ public class JobTest {
 
         assertNotEquals(job1, job2);
     }
-@Test
-    public void testToStringStartsAndEndsWithNewLine(){
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String output = job.toString();
-        assertEquals(System.lineSeparator(), output.substring(0,1));
-        assertEquals(System.lineSeparator(), output.substring(output.length() - 1));
+        System.out.println(job.toString());
 
+        String output = job.toString();
+        System.out.println("Substring: '" + output.substring(0, 1) + "'");
+        assertTrue(output.startsWith(System.lineSeparator()));
+        assertTrue(output.endsWith(System.lineSeparator()));
+
+
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelAndData(){
+        Job job = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"),
+               new CoreCompetency("Java"));
+
+        String output = job.toString();
+        System.out.println(output);
+
+        assertTrue(output.contains("ID: " + job.getId()));
+        assertTrue(output.contains("Name: Web Developer"));
+        assertTrue(output.contains("Employer: LaunchCode"));
+        assertTrue(output.contains("Location: StL"));
+        assertTrue(output.contains("Position Type: Back-end developer"));
+        assertTrue(output.contains("Core Competency: Java"));
+
+
+    }
 }
 //@Test
 //    public void testToReturnStringWithBlankBeforeAfter(){
@@ -59,4 +82,5 @@ public class JobTest {
 //}
 
 
-}
+
+
