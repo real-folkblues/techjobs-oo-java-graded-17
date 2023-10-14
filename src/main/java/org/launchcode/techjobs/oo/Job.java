@@ -50,11 +50,15 @@ public class Job {
     public String toString() {
         return System.lineSeparator() +
                 "ID: " + id + System.lineSeparator() +
-                "Name: " + name + System.lineSeparator() +
-                "Employer: " + employer + System.lineSeparator() +
-                "Location: " + location + System.lineSeparator() +
-                "Position Type: " + positionType + System.lineSeparator() +
-                "Core Competency: " + coreCompetency + System.lineSeparator() +
+                "Name: " + (name.isEmpty() ? "Data not available" : name) + System.lineSeparator() +
+                "Employer: " + (employer.getValue().isEmpty() ? "Data not available" :
+                employer) + System.lineSeparator() +
+                "Location: " + (location.getValue().isEmpty() ? "Data not available" :
+                        location) + System.lineSeparator() +
+                "Position Type: " + (positionType.getValue().isEmpty() ? "Data not available" :
+                                positionType) + System.lineSeparator() +
+                "Core Competency: " + (coreCompetency.getValue().isEmpty() ? "Data not available" :
+                                        coreCompetency) + System.lineSeparator() +
                 System.lineSeparator();
     }
 

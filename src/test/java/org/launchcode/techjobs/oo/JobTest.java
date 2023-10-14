@@ -57,8 +57,8 @@ public class JobTest {
 
     @Test
     public void testToStringContainsCorrectLabelAndData(){
-        Job job = new Job("Web Developer", new Employer("LaunchCode"), new Location("StL"), new PositionType("Back-end developer"),
-               new CoreCompetency("Java"));
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        System.out.println(job.toString());
 
         String output = job.toString();
         System.out.println(output);
@@ -72,14 +72,33 @@ public class JobTest {
 
 
     }
-}
-//@Test
+
+//    @Test
 //    public void testToReturnStringWithBlankBeforeAfter(){
-//        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//        Job job = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
+//        System.out.println(job.toString());
 //        String output = job.toString();
-//        if(output.length() - 1)
+//        System.out.println(output);
+//
 //            System.out.println("Data not available");
 //}
+
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job job = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+
+        String output = job.toString();
+        System.out.println(output);
+
+        assertTrue(output.contains("Name: Data not available"));
+        assertTrue(output.contains("Employer: Data not available"));
+        assertTrue(output.contains("Location: Data not available"));
+        assertTrue(output.contains("Position Type: Data not available"));
+        assertTrue(output.contains("Core Competency: Data not available"));
+    }
+
+}
+
 
 
 
