@@ -64,11 +64,11 @@ public class JobTest {
         System.out.println(output);
 
         assertTrue(output.contains("ID: " + job.getId()));
-        assertTrue(output.contains("Name: Web Developer"));
-        assertTrue(output.contains("Employer: LaunchCode"));
-        assertTrue(output.contains("Location: StL"));
-        assertTrue(output.contains("Position Type: Back-end developer"));
-        assertTrue(output.contains("Core Competency: Java"));
+        assertTrue(output.contains("Name: Product tester"));
+        assertTrue(output.contains("Employer: ACME"));
+        assertTrue(output.contains("Location: Desert"));
+        assertTrue(output.contains("Position Type: Quality control"));
+        assertTrue(output.contains("Core Competency: Persistence"));
 
 
     }
