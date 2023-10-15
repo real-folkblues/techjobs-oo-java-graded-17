@@ -33,6 +33,9 @@ public class Job {
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
+    @Override public int hashCode() {
+        return Objects.hash(id);
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -41,10 +44,7 @@ public class Job {
         return id == job.id;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+
 
     @Override
     public String toString() {
